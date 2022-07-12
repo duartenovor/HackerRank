@@ -24,29 +24,21 @@ int parse_int(char*);
  */
 
 int lonelyinteger(int a_count, int* a) {
-    int i = 0, j = 0, lonelyint = 0, key = 0, found = 0;
+    int i = 0, j = 0;
+    char equal = 1;
     
-    for (i = 1; i < a_count; i++) {
-        key = a[i];
-        j = i - 1;
- 
-        while (j >= 0 && a[j] > key) {
-            a[j + 1] = a[j];
-            j = j - 1;
+    while (i < a_count && equal) {
+        j = 0;
+        equal = 0;
+        while (j < a_count && !equal) {
+            if (a[i] == a[j] && i != j)
+                equal = 1;
+            j++;
         }
-        a[j + 1] = key;
-    }
-    
-    j = a_count > 1 ? a_count - 1 : 0;
-    lonelyint = a[j];
-    i = 1;
-    while(i < a_count - 1 && !found) {
-        found = ((a[i] != a[i-1]) && (a[i] != a[i+1]));
-        lonelyint = a[i * found + j * !found];
         i++;
     }
-            
-    return lonelyint;
+    
+    return a[i-1];
 }
 
 int main()
