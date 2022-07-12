@@ -14,6 +14,19 @@ char* ltrim(char*);
 char* rtrim(char*);
 char** split_string(char*);
 
+int get_gcd(int n1, int n2)
+{
+    if (n2 == 0)
+        return n1;
+    return get_gcd(n2, n1 % n2);
+}
+
+int get_lcm(int n1, int n2) {
+    if (n1 == 0 || n2 == 0)
+        return 0;
+    return (abs(n1 * n2) / get_gcd(n1, n2));
+}
+
 int parse_int(char*);
 
 /*
@@ -26,24 +39,23 @@ int parse_int(char*);
  */
 
 int getTotalX(int a_count, int* a, int b_count, int* b) {
-    int count = 0;
-    char flag = 0;
-    for (int i = a[a_count - 1]; i <= b[0]; i++) {
-        flag = 1;
-        for (int j = 0; j < a_count; j++) {
-            if (i % a[j] != 0)
-                flag = 0;
-        }
-        if (flag) {
-            flag = 1;
-            for (int k = 0; k < b_count; k++) {
-                if (b[k] % i != 0)
-                    flag = 0;
-            }
-            count += flag;
-        }
+    int result = 0;
+    int multiple = 0;
+    int lcm = a[0];
+    int gcd = b[0];
+    
+    for (int i = 1; i < a_count; i++) 
+        lcm = get_lcm(lcm, a[i]);
+        
+    for (int i = 1; i < b_count; i++) 
+        gcd = get_gcd(gcd, b[i]);
+        
+    while (multiple <= gcd) {
+        multiple += lcm;
+        result += ((gcd % multiple) == 0);
     }
-    return count;
+    
+    return result;
 }
 
 int main()
