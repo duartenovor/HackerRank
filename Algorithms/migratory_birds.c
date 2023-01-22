@@ -16,19 +16,6 @@ char** split_string(char*);
 
 int parse_int(char*);
 
-void insertionSort(int arr[], int n) {
-    int i, key, j;
-    for (i = 1; i < n; i++) {
-        key = arr[i];
-        j = i - 1;
- 
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
 
 /*
  * Complete the 'migratoryBirds' function below.
@@ -38,29 +25,22 @@ void insertionSort(int arr[], int n) {
  */
 
 int migratoryBirds(int arr_count, int* arr) {
-    int i = 1;
-    int j = 0;
-    int count = 0;
-    int type = arr[0];
-    
-    insertionSort(arr, arr_count);
-    
-    while (i < arr_count) { 
-        j = i;
-        
-        while (arr[j] == arr[j - 1] && j < arr_count)
-            j++;
-        
-        if (j - i > count) {
-            count = j - i;
-            type = arr[i];
-        }
-            
-        i = j;
-        i++;
+    int count_type[5] = {0};
+    int max_count = 0;
+    int max_type = 0;
+
+    for(int i = 0; i < arr_count; i++) {
+        count_type[arr[i] - 1]++;
     }
-    
-    return type;
+
+    for(int i = 0; i < 5; i++) {
+        if(count_type[i] > max_count) {
+            max_count = count_type[i];
+            max_type = i + 1;
+        }
+    }
+
+    return max_type;
 }
 
 int main()
