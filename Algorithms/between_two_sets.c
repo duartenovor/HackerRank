@@ -43,18 +43,18 @@ int getTotalX(int a_count, int* a, int b_count, int* b) {
     int multiple = 0;
     int lcm = a[0];
     int gcd = b[0];
-    
-    for (int i = 1; i < a_count; i++) 
+
+    for (int i = 1; i < a_count; i++)
         lcm = get_lcm(lcm, a[i]);
-        
-    for (int i = 1; i < b_count; i++) 
+
+    for (int i = 1; i < b_count; i++)
         gcd = get_gcd(gcd, b[i]);
-        
+
     while (multiple <= gcd) {
         multiple += lcm;
         result += ((gcd % multiple) == 0);
     }
-    
+
     return result;
 }
 

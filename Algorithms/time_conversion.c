@@ -40,7 +40,7 @@ char* readline();
 char* timeConversion(char* s) {
     int hour, min, sec;
     char a_or_p;
-    
+
     sscanf(s, "%02d:%02d:%02d%cM", &hour, &min, &sec, &a_or_p);
     sprintf(s, "%02d:%02d:%02d", (hour % 12) + 12 * (a_or_p == 'P'), min, sec);
 

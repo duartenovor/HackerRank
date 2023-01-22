@@ -26,21 +26,21 @@ int parse_int(char*);
 int pickingNumbers(int a_count, int* a) {
     int length_m = 0, length_p = 0;
     int max_lenth = 1;
-    
+
     for (int i = 0; i < a_count; i++) {
         length_m = length_p = 1;
-        
+
         for (int j = 0; j < a_count; j++) {
             if ((a[i] == a[j] || a[i] - a[j] == -1) && i != j)
                 length_m ++;
             else if((a[i] == a[j] || a[i]- a[j] == 1) && i != j)
                 length_p++;
         }
-        
+
         max_lenth = (length_m > max_lenth ? length_m : max_lenth);
         max_lenth = (length_p > max_lenth ? length_p : max_lenth);
     }
-    
+
     return max_lenth;
 }
 

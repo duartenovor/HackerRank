@@ -48,12 +48,12 @@ int parse_int(char*);
  */
 char* kangaroo(int x1, int v1, int x2, int v2) {
     static char msg[2][4] = {"NO", "YES"};
-    
+
     while (x1 < x2) {
         x1 += v1;
         x2 += v2;
     }
-    
+
     return msg[x1 == x2];
 }
 

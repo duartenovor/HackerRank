@@ -55,7 +55,7 @@ int* breakingRecords(int scores_count, int* scores, int* result_count) {
     int min = scores[0];
     static int records[2] = {0, 0};
     *result_count = 2;
-    
+
     for (int i = 1; i < scores_count; i++) {
         if (scores[i] > max) {
             max = scores[i];
@@ -66,7 +66,7 @@ int* breakingRecords(int scores_count, int* scores, int* result_count) {
             records[1]++;
         }
     }
-    
+
     return records;
 }
 

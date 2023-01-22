@@ -26,7 +26,7 @@ int parse_int(char*);
 int lonelyinteger(int a_count, int* a) {
     int i = 0, j = 0;
     char equal = 1;
-    
+
     while (i < a_count && equal) {
         j = 0;
         equal = 0;
@@ -37,7 +37,7 @@ int lonelyinteger(int a_count, int* a) {
         }
         i++;
     }
-    
+
     return a[i-1];
 }
 

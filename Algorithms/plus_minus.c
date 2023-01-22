@@ -26,7 +26,7 @@ void plusMinus(int arr_count, int* arr) {
     int positive = 0;
     int negative = 0;
     int zero = 0;
-    
+
     for (int i = 0; i < arr_count; i++) {
         if(arr[i] > 0)
             positive++;
@@ -35,7 +35,7 @@ void plusMinus(int arr_count, int* arr) {
         else
             zero++;
     }
-    
+
     printf("%.6f\n", positive / (float) arr_count);
     printf("%.6f\n", negative / (float) arr_count);
     printf("%.6f\n", zero / (float) arr_count);

@@ -28,17 +28,17 @@ int countingValleys(int steps, char* path) {
     int count = 0;
     int old_count = 0;
     int valeys = 0;
-    
+
     for (int i = 0; i < steps; i++) {
         if (path[i] == 'D')
             count--;
         else
             count++;
-            
+
         valeys += (old_count < 0 && count == 0);
         old_count = count;
     }
-    
+
     return valeys;
 }
 

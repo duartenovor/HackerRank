@@ -29,16 +29,16 @@ int parse_int(char*);
 int birthday(int s_count, int* s, int d, int m) {
     int segments = 0;
     int sum = 0;
-    
+
     for (int i = 0; i < s_count - m + 1; i++) {
         sum = 0;
-        
+
         for (int j = 0; j < m; j++ )
             sum += s[i + j];
-        
+
         segments += (sum == d);
     }
-    
+
     return segments;
 }
 

@@ -25,11 +25,11 @@ int parse_int(char*);
 
 int simpleArraySum(int ar_count, int* ar) {
     long sum = 0;
-    
+
     for (int i = 0; i < ar_count; i++)
         sum += ar[i];
-    
-    return sum;    
+
+    return sum;
 }
 
 int main()

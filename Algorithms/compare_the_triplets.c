@@ -56,18 +56,18 @@ int* compareTriplets(int a_count, int* a, int b_count, int* b, int* result_count
     int a_points = 0, b_points = 0;
     *result_count = 2;
     static int points[2];
-    
+
     for (int i = 0; i < a_count; i++) {
         if (a[i] > b[i])
             a_points++;
         else if (a[i] < b[i])
             b_points++;
     }
-    
-    
+
+
     points[0] = a_points;
     points[1] = b_points;
-    
+
     return points;
 }
 

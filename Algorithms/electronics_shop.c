@@ -15,16 +15,16 @@ char** split_string(char*);
 int getMoneySpent(int keyboards_count, int* keyboards, int drives_count, int* drives, int b) {
     int most_exp = -1;
     int price = 0;
-    
+
     for (int i = 0; i < keyboards_count; i++) {
         for (int j = 0; j < drives_count; j++) {
             price = keyboards[i] + drives[j];
-            
+
             if (price <= b && price > most_exp)
                 most_exp = price;
         }
     }
-    
+
     return most_exp;
 }
 

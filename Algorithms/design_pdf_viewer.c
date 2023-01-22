@@ -18,10 +18,10 @@ int parse_int(char*);
 
 int find_max(int n, int* arr) {
     int max = INT_MIN;
-    
+
     for (int i = 0; i < n; i++)
         max = arr[i] > max ? arr[i] : max;
-        
+
     return max;
 }
 
@@ -37,14 +37,14 @@ int find_max(int n, int* arr) {
 int designerPdfViewer(int h_count, int* h, char* word) {
     int *heights = malloc(strlen(word) * sizeof(int));
     int max = 0;
-    
-    for (int i = 0; i < strlen(word); i++) 
+
+    for (int i = 0; i < strlen(word); i++)
         heights[i] = h[word[i] - 'a'];
-        
+
     max = find_max(strlen(word), heights);
-    
+
     free(heights);
-    
+
     return max * strlen(word);
 }
 

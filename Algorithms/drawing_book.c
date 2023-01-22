@@ -27,11 +27,11 @@ int parse_int(char*);
 int pageCount(int n, int p) {
     int front = 0;
     int back = 0;
-    
+
     front = p / 2;
     back = n / 2 - front;
-    
-    return front < back ? front : back; 
+
+    return front < back ? front : back;
 }
 
 int main()

@@ -31,10 +31,10 @@ int sockMerchant(int n, int* ar) {
 
     for (int i = 0; i < n; i++)
         ordered_arr[ar[i] - 1]++;
-        
+
     for (int i = 0; i < 100; i++)
         pairs += (ordered_arr[i] / 2);
-    
+
     return pairs;
 }
 

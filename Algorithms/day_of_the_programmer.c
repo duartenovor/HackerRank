@@ -43,20 +43,20 @@ int parse_int(char*);
  */
 char* dayOfProgrammer(int year) {
     static char date[11];
-    
+
     if (year <= 1917) {
         if (year % 4 == 0)
-            sprintf(date, "12.09.%d", year); 
+            sprintf(date, "12.09.%d", year);
         else
-            sprintf(date, "13.09.%d", year); 
+            sprintf(date, "13.09.%d", year);
     } else if (year >= 1919) {
         if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
-            sprintf(date, "12.09.%d", year); 
+            sprintf(date, "12.09.%d", year);
         else
-            sprintf(date, "13.09.%d", year); 
+            sprintf(date, "13.09.%d", year);
     }else
-        strcpy(date, "26.09.1918"); 
-    
+        strcpy(date, "26.09.1918");
+
     return date;
 }
 

@@ -37,7 +37,7 @@ int magic_square[8][3][3] = {
 int formingMagicSquare(int s_rows, int s_columns, int** s) {
     int total_cost = 0;
     int min_cost = 100;
-    
+
     for (int m_square = 0; m_square < 8; m_square++) {
         total_cost = 0;
         for (int row = 0; row < 3; row++) {
@@ -48,7 +48,7 @@ int formingMagicSquare(int s_rows, int s_columns, int** s) {
         if (total_cost < min_cost)
             min_cost = total_cost;
     }
-    
+
     return min_cost;
 }
 

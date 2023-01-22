@@ -26,14 +26,14 @@ char* catAndMouse(int x, int y, int z) {
     static char winner[3][8] = {"Cat A", "Cat B", "Mouse C"};
     int distance_x = abs(z - x);
     int distance_y = abs(z - y);
-    
+
     if (distance_x == distance_y)
         return winner[2];
-        
+
     if (distance_x > distance_y)
         return winner[1];
-    
-    return winner[0];       
+
+    return winner[0];
 }
 
 int main()

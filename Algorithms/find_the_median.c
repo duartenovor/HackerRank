@@ -25,12 +25,12 @@ int parse_int(char*);
 
 int findMedian(int arr_count, int* arr) {
     int median = 0;
-    
+
     int i, key, j;
     for (i = 1; i < arr_count; i++) {
         key = arr[i];
         j = i - 1;
- 
+
         /* Move elements of arr[0..i-1], that are
           greater than key, to one position ahead
           of their current position */
@@ -40,7 +40,7 @@ int findMedian(int arr_count, int* arr) {
         }
         arr[j + 1] = key;
     }
-           
+
     median = arr[arr_count/2];
 
     return median;

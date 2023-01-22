@@ -25,12 +25,12 @@ int parse_int(char*);
 
 int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
     long d1 = 0, d2 = 0;
-    
+
     for (int i = 0; i < arr_rows; i++) {
         d1 += arr[i][i];
         d2 += arr[arr_rows - 1 - i][i];
     }
-    
+
     return abs(d1 - d2);
 }
 

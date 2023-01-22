@@ -18,10 +18,10 @@ int parse_int(char*);
 
 int find_max(int n, int* arr) {
     int max = INT_MIN;
-    
+
     for (int i = 0; i < n; i++)
         max = arr[i] > max ? arr[i] : max;
-        
+
     return max;
 }
 
@@ -36,7 +36,7 @@ int find_max(int n, int* arr) {
 
 int hurdleRace(int k, int height_count, int* height) {
     int max = find_max(height_count, height);
-    
+
     return max - k > 0 ? max - k : 0;
 }
 

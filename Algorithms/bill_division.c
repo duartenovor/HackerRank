@@ -31,14 +31,14 @@ void bonAppetit(int bill_count, int* bill, int k, int b) {
         if (k != i)
             portion += bill[i];
     }
-    
+
     portion /= 2;
-    
+
     if (portion == b)
         printf("Bon Appetit");
-    else 
+    else
         printf("%d", b - portion);
-    
+
 }
 
 int main()

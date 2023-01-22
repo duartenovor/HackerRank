@@ -31,13 +31,13 @@ int parse_int(char*);
 void countApplesAndOranges(int s, int t, int a, int b, int apples_count, int* apples, int oranges_count, int* oranges) {
     int apples_h = 0;
     int oranges_h = 0;
-    
+
     for (int i = 0; i < apples_count; i++)
         apples_h += ((a + apples[i] >= s) && (a + apples[i] <= t));
-        
+
     for (int i = 0; i < oranges_count; i++)
         oranges_h += ((b + oranges[i] >= s) && (b + oranges[i] <= t));
-    
+
     printf("%d\n%d", apples_h, oranges_h);
 }
 
