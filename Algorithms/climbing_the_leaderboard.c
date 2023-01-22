@@ -53,32 +53,35 @@ int parse_int(char*);
  *
  */
 int* climbingLeaderboard(int ranked_count, int* ranked, int player_count, int* player, int* result_count) {
-    int *p_rank = malloc(player_count * sizeof(int));
-    int act_rank = 1;
-    int p = player_count - 1;
-    
+    int *player_ranks = malloc(player_count * sizeof(int));
+    int current_rank = 1;
+    int current_player = player_count - 1;
+
+    // Set the result count to the number of players
     *result_count = player_count;
-    
-    for (int r = 0; r < ranked_count; r++) {
-            
-        while (player[p] >= ranked[r]) {
-            p_rank[p] = act_rank;
-            p--;
+
+    // Iterate through the ranked players
+    for (int rank = 0; rank < ranked_count; rank++) {
+        // Check if the current player has a score greater than or equal to the current ranked player
+        while (player[current_player] >= ranked[rank]) {
+            player_ranks[current_player] = current_rank;
+            current_player--;
         }
-        
-        if (ranked[r] > ranked[r + 1] && r < ranked_count - 1) {
-            act_rank++;
-        } 
+
+        // Check if the current ranked player has a lower score than the next player
+        if (ranked[rank] > ranked[rank + 1] && rank < ranked_count - 1) {
+            current_rank++;
+        }
     }
-    
-    act_rank++;
-    
-    while (p >= 0) {
-        p_rank[p] = act_rank;
-        p--;
+
+    // Assign the remaining players the next rank
+    current_rank++;
+    while (current_player >= 0) {
+        player_ranks[current_player] = current_rank;
+        current_player--;
     }
-    
-    return p_rank;
+
+    return player_ranks;
 }
 
 int main()
